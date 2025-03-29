@@ -1,0 +1,28 @@
+# Source files
+src/
+
+# Tests
+test/
+coverage/
+*.test.js
+*.spec.js
+
+# Build tools
+tsconfig.json
+.github/
+.vscode/
+.cursor/
+
+# Misc
+.git/
+.gitignore
+node_modules/
+npm-debug.log
+visualization/
+
+# Environment
+.env
+.env.*
+
+# Documentation (except README)
+docs/ 
