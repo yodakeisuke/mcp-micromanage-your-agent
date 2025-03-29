@@ -11,7 +11,7 @@ Control your coding agent colleague who tends to go off track
     - Assuming cursor+claude
 - They struggle to request user feedback at key decision points during implementation
 - Work plans and progress tracking can be challenging to visualize and monitor
-
+  
 ### Solution
 - **Commit and PR-based Work Plans**: Force implementation plans that break down tickets into PRs and commits as the minimum units of work
 - **Forced Frequent Feedback**: Enforce user reviews at the commit level, creating natural checkpoints for feedback
@@ -52,8 +52,7 @@ The project includes a React-based visualization tool that provides:
 ```
 
 2. (Highly recommended) Add the following `.mdc`s to your project
-
-
+https://github.com/yodakeisuke/mcp-micromanage-your-agent/tree/main/.cursor/rules
 (Can be adjusted to your preference)
 
 ### With Visualisation
