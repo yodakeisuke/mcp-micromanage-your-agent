@@ -8,7 +8,7 @@ Control your coding agent colleague who tends to go off track
 
 ### Challenges with Coding Agents
 - Coding agents often make modifications beyond what they're asked to do
-    - Assuming cusor+claude
+    - Assuming cursor+claude
 - They struggle to request user feedback at key decision points during implementation
 - Work plans and progress tracking can be challenging to visualize and monitor
 
