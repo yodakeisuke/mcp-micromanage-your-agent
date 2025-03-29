@@ -13,14 +13,12 @@ import { WorkPlan, WorkPlanInitOptions } from './aggregates/workplan.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const logLevel = process.env.LOG_LEVEL 
-  ? (LogLevel[process.env.LOG_LEVEL as keyof typeof LogLevel] || LogLevel.INFO) 
-  : LogLevel.INFO;
+const logLevel = LogLevel.INFO;
 logger.setLogLevel(logLevel);
 logger.info(`Logger initialized with level: ${LogLevel[logLevel]}`);
 
-const dataDir = process.env.DATA_DIR || path.resolve(__dirname, '../visualization/public/data');
-const dataFileName = process.env.DATA_FILE_NAME || 'workplan.json';
+const dataDir = path.resolve(__dirname, '../visualization/public/data');
+const dataFileName = 'workplan.json';
 
 const workPlanOptions: WorkPlanInitOptions = {
   dataDir,
