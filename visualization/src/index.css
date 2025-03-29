@@ -1,0 +1,364 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* ライトモード（デフォルト）の変数 */
+  --background-color: #f8f8f8;
+  --text-color: #1a1a1a;
+  --node-bg: #ffffff;
+  --node-border: #e2e8f0;
+  --node-selected: #d4e6ff;
+  --node-hover: #f0f7ff;
+  --pr-node-bg: #ebf4ff;
+  --commit-node-bg: #fff;
+  --start-node-bg: #e6fffa;
+  --edge-color: #64748b;
+  --panel-bg: #ffffff;
+  --panel-shadow: rgba(0, 0, 0, 0.15);
+  --filter-button-bg: #f1f5f9;
+  --filter-button-hover: #e2e8f0;
+  --status-not-started-bg: #f1f5f9;
+  --status-in-progress-bg: #eff6ff;
+  --status-completed-bg: #f0fdf4;
+  --status-cancelled-bg: #fef2f2;
+  --status-blocked-bg: #fff7ed;
+  --status-needs-refinement-bg: #fdf4ff;
+  --status-user-review-bg: #f3e8ff;
+  --input-bg: #ffffff;
+  --input-border: #e2e8f0;
+  --input-focus-border: #3b82f6;
+  --button-primary-bg: #3b82f6;
+  --button-primary-hover: #2563eb;
+  --button-secondary-bg: #64748b;
+  --button-secondary-hover: #475569;
+  --button-danger-bg: #ef4444;
+  --button-danger-hover: #dc2626;
+}
+
+/* ダークモードの変数 */
+.dark-mode {
+  --background-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --node-bg: #2d3748;
+  --node-border: #4a5568;
+  --node-selected: #3b4858;
+  --node-hover: #4a5568;
+  --pr-node-bg: #2c3e50;
+  --commit-node-bg: #2d3748;
+  --edge-color: #a0aec0;
+  --panel-bg: #2d3748;
+  --panel-shadow: rgba(0, 0, 0, 0.3);
+  --filter-button-bg: #4a5568;
+  --filter-button-hover: #2d3748;
+  --status-not-started-bg: #374151;
+  --status-in-progress-bg: #1e3a8a;
+  --status-completed-bg: #065f46;
+  --status-cancelled-bg: #7f1d1d;
+  --status-blocked-bg: #783c00;
+  --status-needs-refinement-bg: #701a75;
+  --status-user-review-bg: #701a75;
+  --input-bg: #4a5568;
+  --input-border: #64748b;
+  --input-focus-border: #60a5fa;
+  --button-primary-bg: #3b82f6;
+  --button-primary-hover: #1d4ed8;
+  --button-secondary-bg: #64748b;
+  --button-secondary-hover: #475569;
+  --button-danger-bg: #ef4444;
+  --button-danger-hover: #b91c1c;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: color 0.2s, background-color 0.2s;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* 全幅表示用のスタイル */
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ReactFlowのカスタマイズ */
+
+
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ReactFlow ダークモード対応 */
+.dark-mode .react-flow__node {
+  background-color: var(--node-bg);
+  color: var(--text-color);
+  border-color: var(--node-border);
+}
+
+.dark-mode .react-flow__edge-path {
+  stroke: var(--edge-color);
+}
+
+.dark-mode .react-flow__controls {
+  background-color: var(--panel-bg);
+  box-shadow: 0 0 2px 1px var(--panel-shadow);
+}
+
+.dark-mode .react-flow__controls-button {
+  background-color: var(--filter-button-bg);
+  color: var(--text-color);
+  border-color: var(--node-border);
+}
+
+.dark-mode .react-flow__controls-button:hover {
+  background-color: var(--filter-button-hover);
+}
+
+.dark-mode .react-flow__background {
+  background-color: var(--background-color);
+}
+
+.dark-mode .react-flow__attribution {
+  background-color: var(--panel-bg);
+  color: var(--text-color);
+}
+
+.dark-mode .react-flow__handle {
+  background-color: var(--button-primary-bg);
+  border-color: var(--node-border);
+}
+
+.dark-mode .react-flow__edge-text {
+  fill: var(--text-color);
+}
+
+.dark-mode .react-flow__minimap {
+  background-color: var(--panel-bg);
+}
+
+.dark-mode .react-flow__minimap-mask {
+  fill: var(--panel-bg);
+}
+
+.dark-mode .react-flow__minimap-node {
+  fill: var(--node-bg);
+  stroke: var(--node-border);
+}
+
+/* コンポーネントのダークモード対応 */
+.dark-mode button {
+  background-color: var(--button-secondary-bg);
+  color: white;
+}
+
+.dark-mode button:hover {
+  background-color: var(--button-secondary-hover);
+}
+
+.dark-mode input, .dark-mode select, .dark-mode textarea {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border-color: var(--input-border);
+}
+
+.dark-mode input::placeholder, .dark-mode textarea::placeholder {
+  color: #9ca3af;
+}
+
+.dark-mode input:focus, .dark-mode select:focus, .dark-mode textarea:focus {
+  border-color: var(--input-focus-border);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+}
+
+/* 特定のコンポーネントスタイル */
+.dark-mode .filter-panel {
+  background-color: var(--panel-bg);
+  box-shadow: 0 4px 6px var(--panel-shadow);
+}
+
+.dark-mode .export-panel {
+  background-color: var(--panel-bg);
+  box-shadow: 0 4px 6px var(--panel-shadow);
+}
+
+/* Node 特定のスタイル */
+.dark-mode .start-node {
+  background-color: var(--start-node-bg);
+}
+
+.dark-mode .pr-node {
+  background-color: var(--pr-node-bg);
+}
+
+.dark-mode .commit-node {
+  background-color: var(--commit-node-bg);
+}
+
+/* ステータスラベルのダークモード対応 */
+.dark-mode .status-badge.not_started {
+  background-color: var(--status-not-started-bg);
+}
+
+.dark-mode .status-badge.in_progress {
+  background-color: var(--status-in-progress-bg);
+}
+
+.dark-mode .status-badge.completed {
+  background-color: var(--status-completed-bg);
+}
+
+.dark-mode .status-badge.cancelled {
+  background-color: var(--status-cancelled-bg);
+}
+
+.dark-mode .status-badge.blocked {
+  background-color: var(--status-blocked-bg);
+}
+
+.dark-mode .status-badge.needsRefinment {
+  background-color: var(--status-needs-refinement-bg);
+}
+
+.dark-mode .status-badge.user_review {
+  background-color: var(--status-user-review-bg);
+}
+
+/* 一般的なトランジション */
+.transition-all {
+  transition: all 0.2s ease;
+}
+
+/* アクセシビリティ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* フォーカス可視性 */
+:focus-visible {
+  outline: 2px solid var(--input-focus-border);
+  outline-offset: 2px;
+}
+
+/* ダークモードでのスクロールバーカスタマイズ */
+.dark-mode::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark-mode::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+.dark-mode::-webkit-scrollbar-thumb {
+  background-color: #4a5568;
+  border-radius: 4px;
+}
+
+.dark-mode::-webkit-scrollbar-thumb:hover {
+  background-color: #a0aec0;
+}
+
+/* レスポンシブメディアクエリ */
+@media (max-width: 768px) {
+  button, input, select {
+    font-size: 14px;
+  }
+  
+  .dark-mode .react-flow__controls {
+    transform: scale(0.8);
+    transform-origin: bottom right;
+  }
+}
+
+/* ステータスバッジのデフォルトスタイル - ライトモード */
+.status-badge.not_started {
+  background-color: var(--status-not-started-bg);
+}
+
+.status-badge.in_progress {
+  background-color: var(--status-in-progress-bg);
+}
+
+.status-badge.completed {
+  background-color: var(--status-completed-bg);
+}
+
+.status-badge.cancelled {
+  background-color: var(--status-cancelled-bg);
+}
+
+.status-badge.blocked {
+  background-color: var(--status-blocked-bg);
+}
+
+.status-badge.needsRefinment {
+  background-color: var(--status-needs-refinement-bg);
+}
+
+.status-badge.user_review {
+  background-color: var(--status-user-review-bg);
+}
+
+/* ステータスバッジのダークモードスタイル */
+.dark-mode .status-badge.not_started {
+  background-color: var(--status-not-started-bg);
+}

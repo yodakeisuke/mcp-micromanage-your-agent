@@ -1,0 +1,172 @@
+/* コミットノードのスタイル */
+.commit-node {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 220px;
+  background-color: white;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+.commit-node:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.commit-node .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.commit-node .title {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  word-break: break-word;
+}
+
+.commit-node .handle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #60a5fa;
+  border: 2px solid white;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.commit-node .handle-left {
+  left: -6px;
+}
+
+.commit-node .handle-right {
+  right: -6px;
+}
+
+/* ホバー時にハンドルを大きく */
+.commit-node:hover .handle {
+  transform: scale(1.2);
+  background-color: #3b82f6;
+}
+
+.commit-node .status-label {
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: white;
+}
+
+.commit-node .status-icon {
+  margin-right: 4px;
+}
+
+/* ノードアクションボタン */
+.node-actions {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: none;
+  flex-direction: row;
+  gap: 4px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  padding: 4px;
+  z-index: 10;
+}
+
+.commit-node:hover .node-actions {
+  display: flex;
+}
+
+.node-action-button {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.node-action-button:hover {
+  background-color: #f3f4f6;
+}
+
+.node-action-edit {
+  color: #3b82f6;
+}
+
+.node-action-delete {
+  color: #ef4444;
+}
+
+/* エッジスタイル */
+.react-flow__edge-path {
+  stroke-width: 2;
+  stroke: #aaa;
+  transition: stroke 0.3s, stroke-width 0.3s;
+}
+
+/* エッジアニメーション */
+.react-flow__edge-path.animated {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+
+/* ホバー時のエッジスタイル */
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke-width: 3;
+  stroke: #3b82f6;
+}
+
+/* エッジラベルスタイル */
+.react-flow__edge-text {
+  font-size: 10px;
+  fill: #666;
+  pointer-events: none;
+}
+
+/* PRノードのスタイル */
+.pr-node {
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.pr-node:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ミニマップ強調 */
+.react-flow__minimap-mask {
+  fill: rgba(240, 240, 240, 0.6);
+}
+
+.react-flow__minimap-node {
+  transition: fill 0.2s;
+}
+
+/* ノード選択時のスタイル */
+.react-flow__node.selected {
+  box-shadow: 0 0 0 2px #3b82f6 !important;
+} 

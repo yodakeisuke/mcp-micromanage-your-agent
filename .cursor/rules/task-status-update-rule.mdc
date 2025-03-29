@@ -1,0 +1,31 @@
+---
+description: Always When updating the status of a task
+globs: 
+alwaysApply: false
+---
+    **STRICT RULES - MUST BE FOLLOWED WITHOUT EXCEPTION:**
+    There is always exactly one task in either the in_progress or user_review state.
+    Before updating the status, we guarantee that each condition is met.
+
+    needsRefinment → in_progress conditions:
+    ✅ Requirements have been sufficiently clarified and ready for implementation
+    ✅ **Fully understand the code's dependencies and have already reviewed them**
+    ✅ The impact on existing code has been assessed
+    
+    in_progress → user_review conditions:
+    ✅ I explicitly checked that there were no compile errors
+    ✅ Necessary tests have been added and all pass
+    ✅ Required documentation updates are completed
+
+    user_review → in_progress conditions:
+    ✅ From feedback, the content to be modified is completely clear
+
+    **user_review → completed conditions**:
+    ✅ Only when explicitly approved by the user, absolutely.
+
+    * → needsRefinment conditions:
+    ✅ It becomes apparent that the task requirements are unclear or incomplete
+
+    * → cancelled conditions:
+    ✅ There is a clear reason why the task is no longer needed, or alternative methods or solutions to meet the requirements are clear
+    ✅ The impact of cancellation on other related tasks has been evaluated

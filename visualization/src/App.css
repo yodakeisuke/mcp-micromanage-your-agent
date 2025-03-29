@@ -1,0 +1,191 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.app-header {
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.app-main {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* フィルターパネルのスタイル */
+.filter-panel-container {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  z-index: 20;
+  max-width: 90%;
+  width: 320px;
+}
+
+/* ノードとエッジのスタイル */
+.pr-node {
+  border-radius: 8px;
+  background-color: #f3f4f6;
+  border: 2px solid #9ca3af;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.commit-node {
+  min-height: 80px;
+  width: 100%;
+  word-break: break-word;
+}
+
+/* ReactFlowのカスタマイズ */
+.react-flow__node {
+  transition: all 0.2s ease-in-out;
+}
+
+.react-flow__node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-flow__node.selected {
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.react-flow__edge-path.animated {
+  stroke-dasharray: 5;
+  animation: dashdraw 3s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  header .flex {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .filter-panel-container {
+    top: 120px;
+    left: 10px;
+    width: calc(100% - 20px);
+    max-width: none;
+  }
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filter-panel-container > div,
+.export-panel-container > div {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ダークモードサポート */
+@media (prefers-color-scheme: dark) {
+  .react-flow__node {
+    color: #f1f5f9;
+  }
+  
+  .react-flow__node.start-node {
+    background-color: #1e3a8a;
+    border-color: #3b82f6;
+  }
+  
+  .react-flow__node.pr-node {
+    background-color: #1f2937;
+    border-color: #4b5563;
+  }
+  
+  .commit-node {
+    background-color: #374151;
+    border-color: #6b7280;
+  }
+}

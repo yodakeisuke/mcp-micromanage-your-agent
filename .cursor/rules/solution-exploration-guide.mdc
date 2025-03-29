@@ -1,0 +1,22 @@
+---
+description: When examining how to implement an issue
+globs: 
+alwaysApply: false
+---
+## Purpose
+- nformation gathering and Brainstorming potential approaches
+
+## Forbidden: 
+- Concrete planning, implementation details, or any code writing
+
+##output-format
+- file: ticket_[issue name].md
+- chapters:
+    - Summary of the issue that will be resolved with the ticket
+    - Overview of the architecture, domain model and data model to be changed or added this time
+    - Work plan based on PR and commitment units(This is only for creating chapters, do not write content)
+
+## Method
+- Understand the issue from the given information and existing code
+- research and interviews with users to ensure that we have all the information we need to complete the task
+- Analyze potential impacts to the existing codebase
