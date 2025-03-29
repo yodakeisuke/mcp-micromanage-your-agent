@@ -19,47 +19,67 @@ Control your coding agent colleague who tends to go off track
 
 ## tool
 
-1. **Plan**: Define your implementation plan with PRs and commits
-2. **Track**: Monitor progress and current status of all work items
-3. **Update**: Change status as work progresses, with mandatory user reviews
+1. **plan**: Define your implementation plan with PRs and commits
+2. **track**: Monitor progress and current status of all work items
+3. **update**: Change status as work progresses, with mandatory user reviews
 
 ## Visualization Dashboard
 
 The project includes a React-based visualization tool that provides:
 
 - Hierarchical view of PRs and commits
+- Real-time updates with auto-refresh
 - Status-based color coding
 - Zoom and pan capabilities
-- Real-time updates with auto-refresh
-- Dark/light mode support
-- Filtering options for complex work plans
 
 ## Getting Started
 
-### Headless
+### Headless（mcp tool only）
 
+1. Add to your mcp json
+```json
+{
+  "mcpServers": {
+    "micromanage": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@yodakeisuke/mcp-micromanage"
+      ]
+    }
+  }
+}
+```
+
+2. (Highly recommended) Add the following `.mdc`s to your project
+
+
+(Can be adjusted to your preference)
+
+### With Visualisation
+
+1. clone this repository
+
+2. Add to your mcp json
+```json
+{
+  "mcpServers": {
+    "micromanage": {
+      "command": "node",
+      "args": [
+        "[CLONE_DESTINATION_PATH]/mcp-micromanage-your-agent/dist/index.js"
+      ]
+    }
+  }
+}
+```
+
+3. run frontend
 ```bash
-# Install dependencies
+cd visualization/ 
 npm install
-
-# Build the project
-npm run build
+npm run dev
 ```
-
-### Running the Server
-
-```bash
-# Start the MCP server
-npx @yodakeisuke/mcp-micromanage
-```
-
-### Viewing the Dashboard
-
-The visualization dashboard can be accessed by opening:
-```
-visualization/index.html
-```
-in your browser.
 
 ## License
 
