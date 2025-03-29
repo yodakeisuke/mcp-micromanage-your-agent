@@ -27,13 +27,13 @@ function getTimestamp(): string {
 
 export function debug(message: string, ...args: any[]): void {
   if (currentLogLevel <= LogLevel.DEBUG) {
-    console.log(`${getTimestamp()} ${chalk.blue('DEBUG')} ${message}`, ...args);
+    console.error(`${getTimestamp()} ${chalk.blue('DEBUG')} ${message}`, ...args);
   }
 }
 
 export function info(message: string, ...args: any[]): void {
   if (currentLogLevel <= LogLevel.INFO) {
-    console.log(`${getTimestamp()} ${chalk.green('INFO')} ${message}`, ...args);
+    console.error(`${getTimestamp()} ${chalk.green('INFO')} ${message}`, ...args);
   }
 }
 
