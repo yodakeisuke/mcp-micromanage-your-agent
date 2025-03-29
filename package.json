@@ -1,6 +1,6 @@
 {
   "name": "@yodakeisuke/mcp-micromanage",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "MCP server for sequential development task management",
   "license": "MIT",
   "author": "yoda keisuke",
