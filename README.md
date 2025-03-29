@@ -2,7 +2,7 @@
 
 Control your coding agent colleague who tends to go off track
 
-![Micromanagement Tool Interface](https://placeholder-for-interface-image.png)
+![image](https://github.com/user-attachments/assets/d3e060a1-77a1-4a86-bd91-e0917cf405ba)
 
 ## Motivation
 
