@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/@yodakeisuke/mcp-micromanage)](https://www.npmjs.com/package/@yodakeisuke/mcp-micromanage)
+
 # mcp-micromanage
 
 Control your coding agent colleague who tends to go off track.
