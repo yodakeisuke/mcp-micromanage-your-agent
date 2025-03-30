@@ -1,6 +1,7 @@
 # mcp-micromanage
 
 Control your coding agent colleague who tends to go off track
+If [sequentialthinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) is a dynamic formulation and externalization of thought workflows, this tool is a dynamic formulation and externalization of development task flows.
 
 ![image](https://github.com/user-attachments/assets/d3e060a1-77a1-4a86-bd91-e0917cf405ba)
 
@@ -52,7 +53,9 @@ The project includes a React-based visualization tool that provides:
 ```
 
 2. (Highly recommended) Add the following `.mdc`s to your project
-https://github.com/yodakeisuke/mcp-micromanage-your-agent/tree/main/.cursor/rules
+
+[recommended-rules](https://github.com/yodakeisuke/mcp-micromanage-your-agent/tree/main/.cursor/rules)
+
 (Can be adjusted to your preference)
 
 ### With Visualisation
