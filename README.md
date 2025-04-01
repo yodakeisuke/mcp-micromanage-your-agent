@@ -73,7 +73,7 @@ The project includes a React-based visualization tool that provides:
     "micromanage": {
       "command": "node",
       "args": [
-        "[CLONE_DESTINATION_PATH]/mcp-micromanage-your-agent/dist/index.js"
+        "[CLONE_DESTINATION_PATH]/sequentialdeveloping/dist/index.js"
       ]
     }
   }
