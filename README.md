@@ -80,7 +80,13 @@ The project includes a React-based visualization tool that provides:
 }
 ```
 
-3. run frontend
+3. build server
+```bash
+npm install
+npm run build
+```
+
+4. run frontend
 ```bash
 cd visualization/ 
 npm install
