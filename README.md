@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/yodakeisuke-mcp-micromanage-your-agent-badge.png)](https://mseep.ai/app/yodakeisuke-mcp-micromanage-your-agent)
+
 [![npm](https://img.shields.io/npm/v/@yodakeisuke/mcp-micromanage)](https://www.npmjs.com/package/@yodakeisuke/mcp-micromanage)
 
 # mcp-micromanage
